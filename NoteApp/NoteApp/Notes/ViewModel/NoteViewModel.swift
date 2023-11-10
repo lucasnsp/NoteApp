@@ -7,9 +7,9 @@
 
 import Foundation
 
-class NoteViewModel {
+class NoteViewModel: ObservableObject {
     
-    var notes: [Note] = []
+   @Published var notes: [Note] = []
     
     
 }

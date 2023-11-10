@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Note {
+struct Note: Identifiable {
+    var id: UUID = UUID()
     var title: String = ""
     var content: String = ""
 }
