@@ -9,7 +9,7 @@ import Foundation
 
 class NoteViewModel: ObservableObject {
     
-   @Published var notes: [Note] = []
+   @Published var notes: [Note] = [Note(title: "Titulo", content: "Descrição do conteudo")]
     
     
 }
