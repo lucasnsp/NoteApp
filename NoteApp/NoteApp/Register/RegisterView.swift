@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct RegisterView: View {
     
@@ -14,6 +15,7 @@ struct RegisterView: View {
     @State var confirmPassword: String = ""
     @State var isPresentedAlert: Bool = false
     @State var goNotes: Bool = false
+    @State var errorMessage: String = ""
     
     var body: some View {
         ZStack {
@@ -44,11 +46,7 @@ struct RegisterView: View {
                 Spacer()
                 
                 Button {
-                    if password == confirmPassword {
-                        goNotes.toggle()
-                    } else {
-                        isPresentedAlert.toggle()
-                    }
+                    registerUser()
                 } label: {
                     Text("Register")
                         .frame(maxWidth: .infinity)
@@ -66,7 +64,7 @@ struct RegisterView: View {
         .alert("Attention!", isPresented: $isPresentedAlert) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text("Check password and confirm password an try again")
+            Text(errorMessage)
         }
         .navigationDestination(isPresented: $goNotes) {
             NotesView()
@@ -76,6 +74,25 @@ struct RegisterView: View {
     
     var isDisabledRegisterButton: Bool {
         return email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+    private func registerUser() {
+        
+        if password == confirmPassword {
+            Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                if let error {
+                    errorMessage = error.localizedDescription
+                    isPresentedAlert.toggle()
+                } else {
+                    goNotes.toggle()
+                }
+            }
+        } else {
+            errorMessage = "Check password and confirm password and try again"
+            isPresentedAlert.toggle()
+        }
+        
+        
     }
 }
 

@@ -101,6 +101,7 @@
 			children = (
 				463B77502AFD274400F47CD1 /* NoteApp */,
 				463B774F2AFD274400F47CD1 /* Products */,
+				463B77A52AFE6FD300F47CD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +175,13 @@
 				463B77682AFD33FB00F47CD1 /* NotesView.swift */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		463B77A52AFE6FD300F47CD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
