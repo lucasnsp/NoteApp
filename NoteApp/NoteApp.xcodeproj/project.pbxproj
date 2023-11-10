@@ -43,6 +43,8 @@
 		463B77A02AFD7FC800F47CD1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 463B779F2AFD7FC800F47CD1 /* FirebaseStorage */; };
 		463B77A22AFD7FC800F47CD1 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 463B77A12AFD7FC800F47CD1 /* FirebaseStorageCombine-Community */; };
 		463B77A42AFD80FD00F47CD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B77A32AFD80FD00F47CD1 /* AppDelegate.swift */; };
+		463B77A92AFE7E4800F47CD1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B77A82AFE7E4800F47CD1 /* Note.swift */; };
+		463B77AD2AFE7EAE00F47CD1 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463B77AC2AFE7EAE00F47CD1 /* NoteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		463B77682AFD33FB00F47CD1 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		463B776A2AFD7F2700F47CD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		463B77A32AFD80FD00F47CD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		463B77A82AFE7E4800F47CD1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		463B77AC2AFE7EAE00F47CD1 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 		463B77502AFD274400F47CD1 /* NoteApp */ = {
 			isa = PBXGroup;
 			children = (
+				463B77A72AFE7E3D00F47CD1 /* Model */,
 				463B77672AFD33EA00F47CD1 /* Notes */,
 				463B77602AFD29AE00F47CD1 /* Utils */,
 				463B77642AFD324500F47CD1 /* Register */,
@@ -172,7 +177,8 @@
 		463B77672AFD33EA00F47CD1 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				463B77682AFD33FB00F47CD1 /* NotesView.swift */,
+				463B77AB2AFE7E8300F47CD1 /* View */,
+				463B77AA2AFE7E7A00F47CD1 /* ViewModel */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -182,6 +188,30 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		463B77A72AFE7E3D00F47CD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				463B77A82AFE7E4800F47CD1 /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		463B77AA2AFE7E7A00F47CD1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				463B77AC2AFE7EAE00F47CD1 /* NoteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		463B77AB2AFE7E8300F47CD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				463B77682AFD33FB00F47CD1 /* NotesView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,8 +317,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				463B77AD2AFE7EAE00F47CD1 /* NoteViewModel.swift in Sources */,
 				463B77A42AFD80FD00F47CD1 /* AppDelegate.swift in Sources */,
 				463B77542AFD274400F47CD1 /* LoginView.swift in Sources */,
+				463B77A92AFE7E4800F47CD1 /* Note.swift in Sources */,
 				463B77662AFD325400F47CD1 /* RegisterView.swift in Sources */,
 				463B77692AFD33FB00F47CD1 /* NotesView.swift in Sources */,
 				463B77632AFD29D000F47CD1 /* Color+Extension.swift in Sources */,
