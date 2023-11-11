@@ -30,7 +30,8 @@ struct NotesView: View {
                 }
             }
         }
-        .navigationTitle("Notas")
+        .navigationBarBackButtonHidden()
+        .navigationTitle("Notas").navigationBarTitleDisplayMode(.large)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Adicionar") {
@@ -38,9 +39,9 @@ struct NotesView: View {
                 }
             }
         }
-        .navigationDestination(isPresented: $isGoAdditionNote) {
-            Color.blue
-        }
+        .sheet(isPresented: $isGoAdditionNote, content: {
+            AddNotesView(viewModel: viewModel)
+        })
     }
 }
 
