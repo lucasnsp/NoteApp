@@ -15,7 +15,7 @@ struct NotesView: View {
     var body: some View {
         List($viewModel.notes, editActions: .all) { $note in
             NavigationLink {
-                Color.red
+                NotesDetailView(note: $note)
             } label: {
                 HStack {
                     Image(systemName: "pencil")
